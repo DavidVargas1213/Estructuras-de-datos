@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class insertionSort {
 
@@ -24,9 +25,12 @@ public class insertionSort {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Cantidad de datos a ordenar?");
+		BufferedWriter bx = new BufferedWriter(new OutputStreamWriter(System.out));
+		bx.write("Ingrese la cantidad de datos del arreglo" + 
+		"\n");
+		bx.flush();
 		int cantDat=Integer.parseInt(br.readLine());
-		String nombreArchivo="InsercionI10000"+".txt";
+		String nombreArchivo="InsercionI10"+".txt";
 		String ruta="C:\\Users\\David Vargas\\Desktop\\Ejecuciones algoritmos de ordenamiento\\insercion\\";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ruta+nombreArchivo)));
 
@@ -38,11 +42,11 @@ public class insertionSort {
 			for (int j = 0; j < a.length; j++) {
 				a[j]= (int) (Math.random()*999);
 			}
-			long timeStart = System.currentTimeMillis();
+			long timeStart = System.nanoTime();
 			insertionSort(a);
-			long timeFinish = System.currentTimeMillis();
+			long timeFinish = System.nanoTime();
 			bw.write(String.valueOf(timeFinish-timeStart)+" ");
-			System.out.println("Time in miliseconds "+(timeFinish-timeStart));
+			System.out.println("Time "+(timeFinish-timeStart)*Math.pow(10, 9));
 			//System.out.println(Arrays.toString(a));
 
 
