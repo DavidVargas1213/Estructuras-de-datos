@@ -45,7 +45,7 @@ public class List {
 		{
 			while(temp != null)
 			{
-				bw.write(temp.toString());
+				bw.write(temp.toString()+"\n");
 				temp = temp.getNext();
 			}
 			bw.flush();
@@ -62,6 +62,7 @@ public class List {
 	{
 		newNode.setNext(head);
 		head = newNode;
+		
 	}
 
 

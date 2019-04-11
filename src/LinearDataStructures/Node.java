@@ -1,3 +1,4 @@
+
 package LinearDataStructures;
 
 /*
@@ -25,6 +26,13 @@ public interface Node {
 	 * @return
 	 */
 	public String toString();
+	
+	
+	/**
+	 * 
+	 * @return 
+	 */
+	public String getDato();
 	
 	
 	/**
